@@ -1,0 +1,37 @@
+.dashboard {
+    display: flex;
+    height: 100%;
+
+    .sidebar {
+        border-right: 1px solid $global-muted-background;
+        background: $global-primary-background;
+        flex: 1 0 10%;
+        padding: 1rem;
+    }
+
+    .sidebar-nav li.uk-nav-header {
+        padding: 20px 20px 8px 20px;
+    }
+
+    .sidebar-nav > li > a {
+        padding: 8px 20px;
+        border-left: 2px solid transparent;
+        transition: all 0.15s ease-out;
+    }
+    .sidebar-nav > li > a:hover,
+    .sidebar-nav > li.uk-open > a {
+        border-left: 2px solid #5201d6;
+        padding-left: 30px;
+        color: $global-color;
+        background-color: rgba($global-primary-background, 0.1);
+    }
+
+    .content-container {
+        overflow-y: auto;
+    }
+
+    .content {
+        width: 90%;
+        margin: 0px auto;
+    }
+}
