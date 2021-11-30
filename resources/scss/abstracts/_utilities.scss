@@ -1,0 +1,21 @@
+// image placeholder
+img[data-src][src*="data:image"] {
+    background: rgba(0, 0, 0, 0.1);
+}
+.uk-text-background {
+    -webkit-background-clip: text;
+    display: inline-block;
+    color: #8659cf !important;
+}
+@supports (-webkit-background-clip: text) {
+    .uk-text-background {
+        background-color: #8659cf;
+        color: transparent !important;
+        background-image: linear-gradient(
+            150deg,
+            #5201d6 5%,
+            #8d67cb 75%,
+            #ba9ee8 100%
+        );
+    }
+}
