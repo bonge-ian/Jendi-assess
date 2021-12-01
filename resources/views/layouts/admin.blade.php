@@ -20,18 +20,21 @@
     <script src="{{ mix('js/vendor.js') }}"></script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+
 </head>
 
 <body>
     <div id="app">
-        <x-navbar />
+        <x-admin.header />
 
-        <main class="uk-background-muted">
+
+        <x-admin.sidebar />
+        <main id="content" data-uk-height-viewport="expand: true">
 
             @if (session('status'))
             <aside class="uk-container">
@@ -40,17 +43,21 @@
                 </div>
             </aside>
             @endif
-
             @if (session('success'))
+            <aside class="uk-container">
                 <div class="uk-margin">
                     <x-alert type="success" close="true" :message="session('success')" />
                 </div>
-            @endif
-            @if (session('warning'))
-            <div class="uk-margin">
-                <x-alert type="warning" close="true" :message="session('warning')" />
-            </div>
-            @endif
+            </aside>
+                @endif
+                @if (session('warning'))
+                <aside class="uk-container">
+                <div class="uk-margin">
+
+                    <x-alert type="warning" close="true" :message="session('warning')" />
+                </div>
+                </aside>
+                @endif
 
             {{ $slot }}
         </main>
@@ -58,6 +65,10 @@
 
     <!-- App -->
     <script src="{{ mix('js/app.js') }}"></script>
+
+
+    @stack('scripts')
+
 </body>
 
 </html>

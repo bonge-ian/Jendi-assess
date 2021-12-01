@@ -9,7 +9,7 @@
 // import Lightbox from 'uikit/dist/js/components/lightbox';
 // import LightboxPanel from 'uikit/dist/js/components/lightbox-panel';
 // import Notification from 'uikit/dist/js/components/notification';
-// import Parallax from 'uikit/dist/js/components/parallax';
+import Parallax from 'uikit/dist/js/components/parallax';
 // import Slider from "uikit/dist/js/components/slider";
 // import SliderParallax from 'uikit/dist/js/components/slider-parallax';
 // import Slideshow from "uikit/dist/js/components/slideshow";
@@ -26,7 +26,7 @@ import UIkitIcons from "uikit/dist/js/uikit-icons";
 // UIkit.component('lightbox', Lightbox);
 // UIkit.component('lightboxPanel', LightboxPanel);
 // UIkit.component('notification', Notification);
-// UIkit.component('parallax', Parallax);
+UIkit.component('parallax', Parallax);
 // UIkit.component('slider', Slider);
 // UIkit.component('sliderParallax', SliderParallax);
 // UIkit.component('slideshow', Slideshow);

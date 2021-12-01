@@ -11,7 +11,7 @@
         <a class="uk-alert-close" uk-close></a>
     @endif
     @if ($message)
-        <p>{{ $message }}</p>
+        <p>{!! $message !!}</p>
     @endif
     {{ $slot }}
 </div>

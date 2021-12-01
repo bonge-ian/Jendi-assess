@@ -76,4 +76,9 @@ class User extends Authenticatable
     {
         return null !== $this->roles()->whereIn('name', $roles)->first();
     }
+
+    public function conferences() : BelongsToMany
+    {
+        return $this->belongsToMany(Conference::class);
+    }
 }

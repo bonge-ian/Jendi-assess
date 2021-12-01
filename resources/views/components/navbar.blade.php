@@ -1,16 +1,30 @@
 <nav class="uk-background-default uk-box-shadow-small" uk-navbar>
     <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="#">
-            <img data-src="{{ asset('jendi.svg')}}" alt="Laravel Logo" uk-svg uk-img width="40" height="40">
+        <a class="uk-navbar-item uk-logo" href="/">
+            <img data-src="{{ asset('img/jendi.svg')}}" alt="Laravel Logo" uk-svg uk-img width="40" height="40">
         </a>
 
         {{-- navigation links   --}}
         <ul class="uk-navbar-nav">
             @auth
-            <li class="{{ request()->routeIs('dashboard') ? 'uk-active' : '' }}">
-                <a href="{{ route('dashboard') }}">Dashboard</a>
-            </li>
+
+                @if (auth()->user()->isAdmin())
+                <li class="{{ request()->routeIs('admin.index') ? 'uk-active' : '' }}">
+                    <a href="{{ route('admin.index') }}">Dashboard</a>
+                </li>
+                @else
+                <li class="{{ request()->routeIs('dashboard') ? 'uk-active' : '' }}">
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                </li>
+                @endif
             @endauth
+        
+            <li>
+                <a href="{{ route('conferences.index')}}">Conferences</a>
+            </li>
+            <li>
+                <a href="{{ route('conferences.past')}}">Past Conferences</a>
+            </li>
         </ul>
     </div>
 
